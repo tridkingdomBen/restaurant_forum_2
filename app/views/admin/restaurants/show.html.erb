@@ -1,0 +1,26 @@
+<br>
+<h1>歡迎來到餐廳介紹</h1>
+<table style='border:1px solid black'>
+  <tr>
+    <th>餐廳名稱</th>
+    <td><%= @restaurant.name %></td>
+  </tr>
+  <tr>
+    <th>餐廳電話</th>
+    <td><%= @restaurant.tel %></td>
+  </tr>
+  <tr>
+    <th>地址</th>
+    <td><%= @restaurant.address %></td>
+  </tr>
+  <tr>
+    <th>營業時間</th>
+    <td><%= @restaurant.opening_hours %></td>
+  </tr>
+  <tr>
+    <th>介紹</th>
+    <td><%= simple_format(@restaurant.description) %></td>
+  </tr>
+</table>
+<br>
+<%= link_to 'Back to index',admin_restaurant_path %>
