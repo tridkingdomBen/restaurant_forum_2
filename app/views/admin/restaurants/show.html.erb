@@ -21,6 +21,10 @@
     <th>介紹</th>
     <td><%= simple_format(@restaurant.description) %></td>
   </tr>
+  <tr>
+    <th>照片</th>
+    <td><%= image_tag @restaurant.image, width:'300px' %></td>
+  </tr>
 </table>
 <br>
 <%= link_to 'Back to index',admin_restaurants_path %>
