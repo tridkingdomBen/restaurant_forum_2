@@ -1,0 +1,13 @@
+<div class='container'>
+  <h1>餐廳前台</h1>
+  <div class = 'navbar text-center'>
+    <ul class="nav nav-pills nav-pills-center">
+      <li ><%= link_to '全部餐廳', restaurants_path %></li>
+      <% @categories.each do |category| %>
+        <li class='<%='active'if category == @category %>'><%= link_to category.name, category_path(category) %></li>
+        <!--用if來判斷什麼時候class='active' -->
+      <% end %>
+    </ul>
+  </div>
+  <%= render partial:'shared/restaurant_list' %>
+</div>
