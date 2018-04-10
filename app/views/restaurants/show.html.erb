@@ -20,7 +20,7 @@
        <%= simple_format @restaurant.description %>
      </div>
      <div class="clearfix"></div>
-     <%= link_to 'back to index', admin_restaurants_path, class: "btn btn-primary" %>
+     <%= link_to 'back to index', root_path, class: "btn btn-primary" %>
      <hr>
      <hr>
    </div>
@@ -31,7 +31,10 @@
     <div>
       <h4><%= comment.user.email.split('@')[0] %></h4>
       <p><%= simple_format comment.content %></p>
-      <em><%= time_ago_in_words(comment.created_at) %></em>
+      <em><%= time_ago_in_words(comment.created_at)+' ago-' %></em>
+      <% if current_user.admin? %>
+        <%= link_to 'Delete',restaurant_comment_path(@restaurant,comment),method: :delete %>
+      <% end %>
     </div>
     <br>
     <% end %>
