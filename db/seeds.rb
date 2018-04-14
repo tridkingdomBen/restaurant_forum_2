@@ -22,5 +22,5 @@ category_list.each do |t|
 end
 puts 'Category created!'
 
-User.create(email:'ben.bc.lin@gmail.com',password:'12345678', role:'admin')
+User.create(name:'Ben', email:'ben.bc.lin@gmail.com',password:'12345678', role:'admin', intro:'管理員')
 puts 'admin user created!'
