@@ -1,17 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-       <br>
-
-       <div>
-         <ul>
-           <li><%= @user.name %></li>
-           <li><%= @user.email %></li>
-           <li><%= @user.intro %></li>
-           <%= link_to 'Edit Profile' ,edit_user_path(@user) ,class: "btn btn-primary"%>
-         </ul>
-       </div>
-     </div>
-     <div class="clearfix"></div>
+      <%= image_tag @user.avatar, class: "img-responsive center-block img-circle "%>
+    </div>
+    <table class='col-md-8'>
+      <tr style='height:50px'>
+        <td><h2><%= @user.name %></h2></td>
+      </tr>
+      <tr style='height:50px'>
+        <td><strong><%= @user.email %></strong></td>
+      </tr>
+      <tr style='height:50px'>
+        <td><p><%= @user.intro %></p></td>
+      </tr>
+      <% if current_user == @user %> 
+        <tr style='height:50px'>
+          <td><%= link_to 'Edit Profile' , edit_user_path(@user) ,class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </table>
+    <div class="clearfix"></div>
    </div>
  </div>
