@@ -7,9 +7,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user == current_user
-      @user.update_attributes(user_params)
-      redirect_to user_path(@user)
+      if @user.update_attributes(user_params)
+        flash[:notice] = "profile was successfully updated"
+        redirect_to user_path(@user)
+      else
+        flash.now[:alert] = "profile was failed to update"
+        render :action => :edit
+      end
     end
+
   end
 
   def edit

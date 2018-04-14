@@ -21,7 +21,7 @@ namespace :dev do
     @users.destroy_all
     20.times do |i|
       User.create!(
-        name: FFaker::Name.first_name,
+        name: FFaker::Name.last_name,
         email: FFaker::Internet.free_email,
         password: FFaker::InternetSE.password,
         intro: FFaker::Book.description,
