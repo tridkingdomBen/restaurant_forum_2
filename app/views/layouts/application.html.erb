@@ -24,13 +24,14 @@
           <link_to '餐廳評論網',root_path, class:"navbar-brand" %>
         </div>
         
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1" >
           <ul class="nav navbar-nav">
             <% if current_user %>
               <% if current_user.admin? %>
                 <li><%= link_to 'Admin 後台', admin_restaurants_path %></li>
               <% end %>
               <li><p class='navbar-text'>Hi, <%= current_user.email %></p></li>
+              
               <li class="active"><%= link_to('登出', destroy_user_session_path, method: :delete)%></li>
               <li><%= link_to('修改密碼', edit_user_registration_path)%></li>
             <% else %>
