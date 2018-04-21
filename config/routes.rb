@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get :feeds
     end
     member do
-      get :dashboards
+      get :dashboard
     end
   end
 
